@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react'
 import { connect as reduxConnect } from 'react-redux'
 
@@ -52,7 +53,7 @@ const base = (target) => {
     static WrappedComponent = target
 
     static contextTypes = {
-      store: React.PropTypes.object.isRequired
+      store: PropTypes.object.isRequired
     }
 
     /** Make request for new data from WP-API. */
@@ -136,7 +137,7 @@ const base = (target) => {
       const props = Object.assign({}, this.props, this._reconcileWpData(this.props))
       return React.createElement(target, props)
     }
-  }
+  };
 }
 
 /**
